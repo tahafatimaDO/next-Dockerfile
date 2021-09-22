@@ -16,5 +16,9 @@ RUN npm install
 # start app
 RUN npm run build
 EXPOSE 3000
+RUN echo "hello"
+RUN echo $DATABASE_URL
+ARG DATABASE_URL
+ENV DATABASE_URL=${DATABASE_URL}
 RUN echo $DATABASE_URL
 CMD npm run start
